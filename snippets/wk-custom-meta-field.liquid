@@ -5,7 +5,7 @@
         <tbody >
             {% for wk_metafield in wk_metafields %}
                 <tr>
-                    <td style="border:none">{{wk_metafield[0] | upcase}}</td>
+                    <td style="border:none">{{wk_metafield[0] |replace: "cus_","" | replace:"_"," " | upcase}}</td>
           			{% assign wk_check_mf = wk_metafield[1] | split : ':' %}
                     {% if wk_check_mf[0] == 'https' %}
                       <td style="border:none"><a>{{wk_metafield[1] }}</a></td>
